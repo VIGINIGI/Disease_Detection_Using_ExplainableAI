@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1><center>Covid-19 Result!</center></h1>
+
+<h2><center>Shown below is the Original Image and the Heatmap of your CT-Scan Image.</center></h2><br>
+
+<style>
+    body {
+      margin-left:100px; 
+      margin-right: 100px; 
+      margin-top: 25px; 
+      margin-bottom: 25px;
+      background-color: #0d6efd;
+    }
+
+    div.covid {  
+      width: 100%;
+      background-color: white;
+      box-shadow: 0px 10px 20px;
+      margin-bottom: 25px;
+      border-radius: 20px;
+    }
+    
+    div.container {
+      text-align: center;
+      padding: 10px 20px;
+      font-style: italic;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .column {
+      flex: 50%;
+      padding: 5px;
+    }
+
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 20px;
+    }
+
+    h1{
+        font-family: "Georgia", serif;
+        color: whitesmoke;
+    }
+
+    h2{
+        font-family: "Garamond", serif;
+        color: rgba(255, 255, 255, 0.705);
+    }
+
+    .button {
+        background-color: #0d6efd; 
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; 
+        transition-duration: 0.4s;
+        border-radius: 20px;
+    }
+
+    .button2:hover {
+        box-shadow: 0 10px 20px 0 rgba(0,0,0,0.24), 0 10px 20px 0 rgba(0,0,0,0.19);
+    }
+
+
+</style>
+
+<div class="row">
+    <div class="column">
+        <div class="covid">
+            <img src="{{img_path}}" height="400px" width="400px">
+            <div class="container">
+            <p style="color:#0d6efd">Original Image</p>
+            </div>
+        </div>
+    </div>&emsp;&emsp;&emsp;&emsp;
+    <div class="column">
+        <div class="covid">
+            <img id="picture" src="data:image/jpeg;base64,{{ img_data }}" height="400px" width="400px">
+            <div class="container">
+            <p style="color:#0d6efd">Explainable Image</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background: ghostwhite; font-size: 20px; padding: 10px; border: 1px solid lightgray; margin: 10px; border-radius: 20px; box-shadow: 0px 10px 20px;">
+    &#9432; <center style="color:#0d6efd">Result: <i> {{prediction}} </i></center>  
+</div><br><br>
+
+<center><form action="/home"><button type="submit" class="button button2">Click here to go back to Homepage.</button></form></center>
+
+</body>
+</html>

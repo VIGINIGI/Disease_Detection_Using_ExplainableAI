@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Input Page</title>
+    <style>
+        html,body {
+  height:100vh;  
+  margin: 0 auto;
+  padding-top: 00px;  
+  color: #0d6efd;
+}
+  
+.container-fluid .row{ 
+  height: 100vh;
+  overflow: auto;  
+  display: flex;
+    align-items: center;
+} 
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col" style="background-image: url('/static/covidimg.jpg'); background-repeat: no-repeat;background-size: cover;  height:100vh;  
+          margin: 0 auto;
+          padding-top: 00px;">
+          </div>
+          <div class="col-8" style="text-align: center;
+          vertical-align: middle;">
+            <h5>We hope you are ready with CT Scan image of the patient</h5>
+            <h5>Please upload clear image for accurate result</h5>
+
+            <div class="my-3;" style="width: 500px; margin: auto;">
+                <form style="margin-left: 70px;" class="form-horizontal" action="/output" method="post" enctype="multipart/form-data">
+
+                    <div class="form-group">
+                      <div class="col-sm-10">          
+                        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd">
+                      </div>
+                    </div>
+                
+                    <div class="form-group">        
+                      <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" style="margin-top: 10px;" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+              <h7>(.jpeg,.png)</h7>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
